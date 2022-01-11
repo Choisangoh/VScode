@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>셀렉트 요소</title>
+</head>
+<body>
+    <h1>셀렉트 만들기</h1>
+    <fieldset>
+        <legend>선택항목들</legend>
+        <p>과목 선택
+            <select>
+                <option>html5</option>
+                <option>css</option>
+                <option>javascript</option>
+                <option>jquery</option>
+            </select>
+            <!--셀렉트는 선택할 수 있는 네모난 보기칸을 만들고 
+                옵션으로 그 안에 추가한다.-->
+        </p>
+        <p>수강지역 선택
+            <select>
+                <optgroup label="마포구">
+                    <option>서교동</option>
+                    <option>망원동</option>
+                    <option>연남동</option>
+                </optgroup>
+                <optgroup label="은평구">
+                    <option>녹번동</option>
+                    <option>불광동</option>
+                    <option>신사동</option>
+                </optgroup>
+                <!--optgroup label="마포구"(마포구가 아니여도 됨)라는 
+                    옵션그룹을 만들어서 다시 그 안에 옵션을 추가한다.-->
+            </select>
+        </p>
+        <p>수강일자 선택
+            <select>
+                   <option>3월 1일</option>             
+                   <option>6월 15일</option>         
+               <optgroup label="9월">
+                   <option>1일</option> 
+                   <option>15일</option>
+               </optgroup>
+            </select>
+        </p>
+    </fieldset>
+</body>
+</html>
