@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--링크를 사용하는 경우는 head태그 아래에(styl태그 아래가 아님!)
+    복붙해주면 세팅된다.-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=East+Sea+Dokdo&display=swap" rel="stylesheet">
+    <style>
+        /*구글 폰트를 검색하면 https://fonts.google.com/?subset=korean
+        위 사이트에 접속할 수 있고, 여기서 사용자 pc에 없는
+        글꼴을 가져다가 내 웹페이지에 적용할 수 있다.*/
+
+        /*인터넷 서체를 끌어다 쓰는 경우
+        먼저 구글 폰트 사이트에 접속해서
+        폰트사이트에서 나의 서체 목록에 추가해준 다음(select this style) 클릭
+        우측에 생기는 창의 링크를 복사해서 head태그 내에 넣어주면 된다.*/
+
+        /*폰트 설정시 글꼴은 하단의 font family에 기입된걸
+        가져다가 복붙해서 쓴다.*/
+        @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=East+Sea+Dokdo&display=swap');
+        .esd{
+            font-family: 'East Sea Dokdo', cursive;
+        }
+        .other{
+            font-family: 'Black Han Sans', sans-serif;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="other">직접 선택한 글꼴</h1>
+    <p class="other">원하는 글꼴을 잘 선택</p>
+
+    <h1 class="esd">ESD 글꼴</h1>
+    <p class="esd">만든곳이 어디지</p>
+</body>
+</html>
