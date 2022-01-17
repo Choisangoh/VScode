@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        *{margin: 0; padding: 0;}
+        body{width: 600px;}
+        #header{border:2px dotted red; height:100px;}
+        #content{border:2px solid blue; height: 300px;}
+        #content > div{display: inline-block;}
+        .sidebar{float: left; border:1px solid aquamarine; 
+                 width: 150px; height: 300px;}
+        .contents{float: left; border:1px solid aquamarine; 
+                 width: 290px; height: 300px;}
+        .rightbar{float: right; border:1px solid aquamarine;
+            width: 150px; height: 300px;}
+        #footer{clear:both; border:2px dashed green; height: 100px;}
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="header">
+        <p>헤더가 들어갈 자리입니다.<br/>
+            border:2px dotted red; height:100px;
+        </p>
+    </div>
+    <div id="content">
+        <div class="sidebar">
+            사이드바 자리
+        </div>
+        <div class="contents">
+            컨텐츠 자리
+        </div>
+        <div class="rightbar">
+            오른쪽 사이드바
+        </div>
+    </div>
+    <div id="footer">
+        푸터가 들어갈 자리입니다.
+    </div>
+</body>
+</html>
