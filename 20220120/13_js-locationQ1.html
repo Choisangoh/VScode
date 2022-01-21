@@ -7,11 +7,9 @@
         // 현재 페이지를 보시겠습니까? 라고 물어보고
         // 확인을 누르면 h1 내용이 보이도록 하고,
         // 취소를 누르면 네이버로 이동하도록 만들기
-        var Q = confirm("현재 페이지를 보시겠습니까?");
-            if(Q){
-                document.getElementById(abc);                
-            }else{
-                location.replace("https://www.naver.com");
+        var result = confirm("현재 페이지를 보시겠습니까?");
+            if(result){
+                location.href="https://www.naver.com";
             }
     </script>
     <meta charset="UTF-8">
@@ -20,6 +18,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1 id="abc">환영합니다.</h1>
+    <h1>환영합니다.</h1>
 </body>
 </html>
