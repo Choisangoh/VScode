@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        // 원거리 선택자.
+        // 태그에 지정한 id를 이용해 특정 태그만 선택할 수 있는 선택자이다.
+        // 선택대상.getElementById("아이디명");
+
+        // 문서 로딩이 끝난 다음에 자바스크립트를 실행하도록
+        // window.onload 내부에 작성해야됨
+        window.onload = function(){
+            // {}안에 작성해야 정상실행함.
+            var myObj = document.getElementById("title");
+            console.log(myObj);
+
+            // #title요소를 가져와서 글씨색을 파란색으로 변경
+            myObj.style.color="blue";
+
+            // 특정 태그들을 들고오기
+            // 선택대상.getElementsByTagName("태그명");
+
+            // 1. ul태그 전체 가져오기
+            // 변수명은 myList
+            var myList = document.getElementsByTagName("ul");
+            console.log(myList);
+
+            // getElements와 같이 s로 끝나는 선택자들은
+            // list로 요소를 가져오기 때문에
+            // 인덱싱해서 원하는 자료를 얻는다.
+            // 처음으로 나온 ul 조회
+            console.log(myList[0]);
+            // 1번 인덱스로 잡히는 ul#list 조회
+            console.log(myList[1]);
+
+            // 이번에는 문서 전체를 범위로 하지 않고,
+            // 0번째 ul에서 li태그만 모아주는 코드
+            // 변수명은 myLi
+            // ul > li와 같은 효과가 됨(myList는 ul들 모음 > li만 얻어왔으므로)
+            var myLi = myList[0].getElementsByTagName("li");
+            console.log(myLi);          
+
+            // myLi에 대해 반복문으로 테투리 설정(힌트는 style.테두리선="설정값")
+            for(i = 0; i < 2; i++){
+                // 2 대신 myLi.length로 써도 됨
+                myLi[i].style.border="2px violet dotted";
+            }
+
+            // getElements 계열은 자료를 가져올 때 리스트로 가져온다.
+            // 설령 내부에 가져올 수 있는 자료가 하나여도 리스트로 가져온다.
+            var myH1 = document.getElementsByTagName("h1");
+            console.log(myH1);
+
+           // 아래쪽에 있는 ul태그에 대해서
+           // 근거리 선택자의 li는 홀수번째는 red
+           // 짝수번째는 gold로 배경색 변경
+           var ulLi = myList[1].getElementsByTagName("li");
+           console.log(ulLi);
+           for(i = 0; i < ulLi.length; i++){ // ulLi.length대신 6써도 가능
+            if(i % 2 !== 0){
+            ulLi[i].style.backgroundColor="gold";
+           }else{
+            ulLi[i].style.backgroundColor="green";
+           }    
+        }
+    }
+    </script>                           
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>선택자</h1>
+        <h2 id="title">원거리 선택자</h2>
+    </div>
+    <ul>
+        <li>getElementById</li>
+        <li>getElementByTagName</li>
+    </ul>
+    <h2>근거리 선택자</h2>
+    <ul id="list">
+        <li>parentNode</li>
+        <li>childNodes</li>
+        <li>chidren</li>
+        <li>firstChild</li>
+        <li>previousSibling</li>
+        <li>nextsibing</li>
+    </ul>
+</body>
+</html>
