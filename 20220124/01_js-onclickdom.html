@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        // DOM 내부 요소를 고치는 작업 실시
+        // DOM 조작과 onclick 이벤트를 같이 조합해서
+        // 사용자가 특정 요소를 클릭했을 때
+        // DOM 조작이 일어나도록 한다.
+        // DOM 조작 이라는 용어는 그냥 html화면에
+        // 변화를 주는 작업이라고 생각하면 된다.
+
+        // 모든 문서 로딩이 끝나고 스크립트를 실행하도록 초기 세팅
+        window.onload = function(){
+            // #number, #increase, #decrease를 각각
+            // 변수 number, incBtn, decBtn에 저장하기
+            var number = document.getElementById("number");       
+            var incBtn = document.getElementById("increase");           
+            var decBtn = document.getElementById("decrease");
+
+            console.log(number.parentNode);
+            // #increase, #decrease의 부모태그 접근을 이용해서
+            // body태그를 콘솔창에 띄우기
+            console.log(incBtn.parentNode.parentNode);
+            console.log(decBtn.parentNode.parentNode);
+
+            // div를 변수에 저장하고 콘솔에 띄우기
+            // tagName으로 얻기
+            // div가 콘솔에 정확히 찍히도록
+            var Div = document.getElementsByTagName("div");
+            console.log(Div[0]);
+
+            // childNodes는 자식태그들을 얻어온다.
+            // 단, 자식태그에서는 html문서상 개행을 위해 친 엔터까지
+            // text로 잡혀오니 주의해야한다.
+            // div태그(변수)의 자식을 콘솔에 찍어보기
+            console.log(Div[0].childNodes);
+
+            // children으로 자식태그를 얻어오면
+            // childNodes와 유사하지만 엔터키로 개행된 부분은
+            // 따로 가져오지 않고 태그요소만 가져온다.
+            console.log(Div[0].children);
+            console.log(Div[0].children[0]);
+            console.log(Div[0].children[1]);
+            console.log(Div[0].children[2]);
+
+            // 일일이 인덱싱으로 가져오기 복잡한 경우
+            // 첫번째나 마지막 요소 등은 근접선택자에서 
+            // 따로 선택할 수 있는 옵션을 제공한다.
+            // firstchild - 첫번쨰 자식태그
+            // lastchild - 마지막 자식태그
+            console.log(Div[0].firstChild);
+            console.log(Div[0].lastChild);
+
+            // previouSibling, nextSibling을 통해서
+            // 형제 태그 간 순번을 하나씩 뒤로 넘기거나
+            // 하나씩 앞으로 가져올 수 있다.
+            // #reset을 잡아서 변수에 저장하고
+            // 위 두 명령어를 이용해서 increase와
+            // decrease를 콘솔에 찍어보기
+            var resetBtn = document.getElementById("reset");
+            // nextSibling은 태그인지 아니면 엔터키에 의한 개행인지 구분 X
+            console.log(resetBtn.previousSibling.previousSibling);
+            console.log(resetBtn.nextSibling.nextSibling);
+            // tag요소들끼리만 잡아서 가져오고싶다면
+            // html에서는 태그요소를 element(요소)라고 부른다.
+            // 따라서 nextElementSibling / previousElementSibling 사용하면
+            // 태그끼리만 다음요소, 이전요소를 구분한다.
+            console.log(resetBtn.nextElementSibling);
+            console.log(resetBtn.previousElementSibling);
+
+            // innerText는 여닫는 태크 사이의 텍스트를 의미한다.
+            console.log(number.innerText);
+
+            // onclick은 태그 내에 onclick="함수명();" 형식으로 연결도 되지만,
+            // 얻어온 변수.onclick = function(){}; 형식으로도 연결 가능
+
+            // incBtn에 onclick을 걸어서 클릭할때마다
+            // number의 innerText값이 1씩 증가하도록 실시
+            // innerText로 얻어오는 자료는 무조건 String으로 간주되므로
+            // parseInt()를 써서 int화 시키는 작업이 필요하다.
+            incBtn.onclick = function(){
+                number.innerText = parseInt(number.innerText) + 1; 
+            }
+
+            // reset, decrease버튼도 이벤트를 적절하게 걸어주기
+            resetBtn.onclick = function(){
+                number.innerHTML = 0;
+            }
+            decBtn.onclick = function(){
+                number.innerText = parseInt(number.innerText) - 1; 
+            }
+
+            // div태그 내에 #red, #blue, #black 버튼을 추가하고,
+            // 각 버튼 클릭시 #number의 글씨색이 해당 버튼 색깔로 바꿔보기
+            var redBtn = document.getElementById("red");
+            var blueBtn = document.getElementById("blue");
+            var blackBtn = document.getElementById("black");
+            
+            redBtn.onclick = function(){
+                number.style.color = "red";
+            }
+            blueBtn.onclick = function(){
+                number.style.color = "blue";
+            }
+            blackBtn.onclick = function(){
+                number.style.color = "black";
+            }
+
+        }
+    </script>
+    <title>Document</title> 
+</head>
+
+<body>
+    <h2 id="number">0</h2>
+    <div> 
+        <button id="increase">+1</button>
+        <button id="reset">0</button>
+        <button id="decrease">-1</button>
+        <br/>
+        <button id="red">빨강</button>
+        <button id="blue">파랑</button>
+        <button id="black">검정</button>
+    </div>
+</body>
+</html> 
