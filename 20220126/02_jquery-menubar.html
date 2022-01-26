@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <!--jquery cdn 입력하기-->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        #menu{
+            background: chartreuse;
+            width: 200px;
+            padding: 10px;
+        }
+        .list{
+            display: none;
+        }
+    </style>
+    <script>
+        // 화면 중간에 요리메뉴를 보여주는 곳에
+        // 마우스를 갖다대면 메뉴들이 보이게 하고
+        // 마우스를 치우면 다시 메뉴들이 가려지도록
+        // .hover()를 이용해서 만들기
+        $(()=>{
+            $("#menu").hover(function(){
+                $(".list").css("display", "block");
+            }, function(){
+                $(".list").css("display", "none");
+            });
+
+        });
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="menu">
+        <h3>요리 메뉴</h3>
+        <ul class="list">
+            <li>만두라면 : 3000</li>
+            <li>참치김밥 : 3500</li>
+            <li>제육덮밥 : 5000</li>
+            <li>치킨마요덮밥 : 5000</li>
+            <li>돌솥비빔밥 : 5500</li>
+            <li>치즈돈까스 : 6000</li>
+        </ul>
+    </div>
+</body>
+</html>
