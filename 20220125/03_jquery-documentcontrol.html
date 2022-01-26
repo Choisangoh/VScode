@@ -76,16 +76,16 @@
             // 9. #list3인 요소의 하위 li요소 중 2번째(1) 요소의
             // 클래스 속성값을 obj2로 바꾸고
             // .obj2에 대해서 배경색을 노란색으로
-            $("#list3 > li").eq(1).attr("class", "obj2");
+            $("#list3 li").eq(1).attr("class", "obj2");
             $(".obj2").css("background-color", "yellow");
-            console.log($("#list3 > li").eq(1));
+            console.log($("#list3 li").eq(1));
 
             // 10. #list3인 요소의 하위 li요소 중 첫번째(0) 요소의
             // 클래스 속성에 obj3를 추가(.addClass 사용)하고,
             // .obj3를 선택해서 글씨색을 빨간색으로 
-            $("#list3 > li").eq(0).addClass("obj3");
+            $("#list3 li").eq(0).addClass("obj3");
             $(".obj3").css("color", "red");
-           console.log($("#list3 > li").eq(0));
+           console.log($("#list3 li").eq(0));
         });
     </script>
     
